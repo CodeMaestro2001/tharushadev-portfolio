@@ -274,6 +274,44 @@ export const projects: readonly Project[] = [
       "Real-time webhook triggers",
     ],
   },
+  {
+    id: "hr-workforce-management",
+    slug: "hr-workforce-management",
+    title: "HR & Workforce Management Platform",
+    summary:
+      "A full-stack HR platform for employee management, leave workflows, and attendance tracking.",
+    description:
+      "Built with Node.js, Express, TypeScript, React, PostgreSQL, Prisma, and Docker. The platform combines a responsive React frontend with authenticated HR APIs and concurrency-safe attendance workflows.",
+    category: "fullstack",
+    technologyIds: ["nodejs", "express", "typescript", "react", "postgresql", "docker"],
+    featured: false,
+    isPlaceholder: false,
+    liveUrl: "https://workforce.tharushadev.online",
+    solution:
+      "Implemented JWT authentication, Admin and Employee role-based access, validation, pagination, and concurrency-safe check-in/check-out. Tested authentication, authorization, and core workforce workflows, then deployed the frontend on Vercel and the API on a VPS using Docker, Nginx Proxy Manager, and HTTPS.",
+    architecture: {
+      nodes: [
+        { id: "react", label: "React + TypeScript", description: "Responsive HR frontend hosted on Vercel" },
+        { id: "api", label: "Node.js + Express", description: "JWT authentication, RBAC, and workforce APIs" },
+        { id: "data", label: "PostgreSQL + Prisma", description: "Application data and persistence" },
+        { id: "deployment", label: "Docker + VPS", description: "API deployment with Nginx Proxy Manager and HTTPS" },
+      ],
+      edges: [
+        { source: "react", target: "api" },
+        { source: "api", target: "data" },
+        { source: "deployment", target: "api" },
+      ],
+    },
+    features: [
+      "Employee management",
+      "Leave workflows and attendance tracking",
+      "JWT authentication and Admin/Employee role-based access",
+      "Input validation and pagination",
+      "Concurrency-safe check-in and check-out",
+      "Tested authentication, authorization, and core workforce workflows",
+      "Vercel frontend and Docker-based VPS API deployment",
+    ],
+  },
 ];
 
 export const verifiedProjects = projects.filter((project) => !project.isPlaceholder);
