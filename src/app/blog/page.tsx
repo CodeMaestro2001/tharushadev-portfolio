@@ -25,7 +25,7 @@ export default async function BlogPage() {
             {posts.map((post, index) => (
               <article className={`blog-card ${index === 0 ? "blog-card--featured" : ""}`} key={post.slug}>
                 <Link className="blog-card-visual" href={`/blog/${post.slug}`} tabIndex={-1} aria-hidden="true">
-                  {post.image ? <Image src={post.image} alt="" width={1400} height={760} sizes={index === 0 ? "(max-width: 900px) 100vw, 60vw" : "(max-width: 900px) 100vw, 40vw"} /> : <span className="blog-placeholder"><PenLine size={30} /></span>}
+                  {post.image ? <Image src={post.image} alt="" width={post.imageWidth || 1400} height={post.imageHeight || 760} sizes={index === 0 ? "(max-width: 900px) 100vw, 60vw" : "(max-width: 900px) 100vw, 40vw"} /> : <span className="blog-placeholder"><PenLine size={30} /></span>}
                 </Link>
                 <div className="blog-card-copy">
                   <p className="eyebrow"><span>{String(index + 1).padStart(2, "0")}</span> {formatPostDate(post.publishedAt)}</p>

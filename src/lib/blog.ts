@@ -11,6 +11,8 @@ export type BlogPost = {
   tags: string[];
   image: string | null;
   imageAlt: string;
+  imageWidth?: number;
+  imageHeight?: number;
 };
 
 const blogDirectory = path.join(process.cwd(), "content", "blog");
@@ -27,8 +29,40 @@ function isBlogPost(value: unknown): value is BlogPost {
     Array.isArray(post.tags) &&
     post.tags.every((tag) => typeof tag === "string") &&
     (typeof post.image === "string" || post.image === null) &&
-    typeof post.imageAlt === "string"
+    typeof post.imageAlt === "string" &&
+    (post.imageWidth === undefined || typeof post.imageWidth === "number") &&
+    (post.imageHeight === undefined || typeof post.imageHeight === "number")
   );
+}
+
+function cleanText(value: string) {
+  return value
+    .normalize("NFKC")
+    .replace(/\u3164/g, "")
+    .replace(/[ \t]+\n/g, "\n")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}
+
+function cleanExcerpt(excerpt: string, body: string) {
+  const source = cleanText(excerpt || body);
+  const blocks = source.split(/\n\s*\n|\n/).map((block) => block.trim()).filter(Boolean);
+  return (
+    blocks.find((block) => !/^#|^📘|engineering notes/i.test(block) && block.length >= 35) ||
+    blocks[0] ||
+    ""
+  ).slice(0, 280);
+}
+
+function preparePost(post: BlogPost): BlogPost {
+  const body = cleanText(post.body);
+  return {
+    ...post,
+    title: cleanText(post.title),
+    excerpt: cleanExcerpt(post.excerpt, body),
+    body,
+    imageAlt: cleanText(post.imageAlt),
+  };
 }
 
 export async function getBlogPosts() {
@@ -47,7 +81,7 @@ export async function getBlogPosts() {
         try {
           const raw = await fs.readFile(path.join(blogDirectory, file), "utf8");
           const post: unknown = JSON.parse(raw);
-          return isBlogPost(post) ? post : null;
+          return isBlogPost(post) ? preparePost(post) : null;
         } catch {
           return null;
         }
@@ -65,7 +99,7 @@ export async function getBlogPost(slug: string) {
   try {
     const raw = await fs.readFile(path.join(blogDirectory, `${safeSlug}.json`), "utf8");
     const post: unknown = JSON.parse(raw);
-    return isBlogPost(post) ? post : null;
+    return isBlogPost(post) ? preparePost(post) : null;
   } catch {
     return null;
   }
