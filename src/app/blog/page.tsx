@@ -6,7 +6,7 @@ import { PageIntro } from "@/components/PageIntro";
 import { formatPostDate, getBlogPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
-  title: "Writing",
+  title: "Articles",
   description: "Notes on software engineering, automation, and building useful digital products.",
 };
 
