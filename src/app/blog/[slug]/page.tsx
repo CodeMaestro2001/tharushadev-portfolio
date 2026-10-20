@@ -30,7 +30,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     <main id="main-content" className="interior-page article-page">
       <article className="site-container">
         <header className="article-header">
-          <Link className="article-back" href="/blog"><ArrowLeft size={16} /> All writing</Link>
+          <Link className="article-back" href="/blog"><ArrowLeft size={16} /> All articles</Link>
           <div className="article-meta"><span className="eyebrow">{formatPostDate(post.publishedAt)}</span><span className="eyebrow">{Math.max(1, Math.ceil(post.body.split(/\s+/).length / 220))} min read</span></div>
           <h1>{post.title}</h1>
           <p>{post.excerpt}</p>

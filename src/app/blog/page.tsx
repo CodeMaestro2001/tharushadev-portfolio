@@ -17,7 +17,7 @@ export default async function BlogPage() {
   return (
     <main id="main-content" className="interior-page blog-page">
       <div className="site-container">
-        <PageIntro number="05" label="Writing" description="Practical notes from building software, automating workflows, and learning in public.">
+        <PageIntro number="05" label="Articles" description="Practical notes from building software, automating workflows, and learning in public.">
           Ideas, systems, and the <em>work between.</em>
         </PageIntro>
         {posts.length ? (
