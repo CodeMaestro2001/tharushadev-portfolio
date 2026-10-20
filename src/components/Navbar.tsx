@@ -22,7 +22,7 @@ export function Navbar() {
   }, [open]);
 
   const isActive = (href: string) =>
-    pathname === href || (href === "/work" && pathname.startsWith("/projects/"));
+    pathname === href || (href === "/work" && pathname.startsWith("/projects/")) || (href !== "/" && pathname.startsWith(`${href}/`));
 
   return (
     <header className="nav-shell">
