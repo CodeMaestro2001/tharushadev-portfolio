@@ -1,0 +1,12 @@
+{
+  "slug": "why-should-every-software-engineer-understand-dsa",
+  "title": "Why Should Every Software Engineer Understand DSA?",
+  "excerpt": "But writing code that works and writing code that works efficiently are two different things.",
+  "body": "ㅤ\n📘 Engineering Notes | From Concepts to Code — Post 18\nㅤ\nWhen learning software development, we often focus on frameworks, libraries, and building applications.\n\nBut writing code that works and writing code that works efficiently are two different things.\n\nThat's where Data Structures and Algorithms (DSA) become important.\n\nIn the next few posts, I'll be exploring DSA concepts, starting with the fundamentals and gradually moving toward more advanced topics.\nㅤ\n𝗪𝗵𝗮𝘁 𝗔𝗿𝗲 𝗗𝗮𝘁𝗮 𝗦𝘁𝗿𝘂𝗰𝘁𝘂𝗿𝗲𝘀?\n\nData structures help us organize and manage data efficiently.\n\nSome common examples include:\n\n• Arrays — Store elements in an ordered collection\n• Linked Lists — Connect elements using references\n• Stacks — Follow Last In, First Out (LIFO)\n• Queues — Follow First In, First Out (FIFO)\n• Hash Maps — Store key-value pairs\nㅤ\n𝗪𝗵𝗮𝘁 𝗔𝗿𝗲 𝗔𝗹𝗴𝗼𝗿𝗶𝘁𝗵𝗺𝘀?\n\nAlgorithms are step-by-step instructions used to solve problems.\n\nFor example:\n\n• Searching for a product\n• Sorting a list of records\n• Finding the shortest route\n• Processing large datasets\nㅤ\n𝗪𝗵𝘆 𝗗𝗼𝗲𝘀 𝗗𝗦𝗔 𝗠𝗮𝘁𝘁𝗲𝗿?\n\nImagine searching for a specific item in a collection containing thousands of records.\n\nA linear search checks elements one by one.\n\nBinary search can find an item more efficiently, provided the data is sorted.\n\nBoth solve the same problem, but their performance can be very different.\n\nUnderstanding DSA helps us make better decisions when solving problems.\nㅤ\n𝗠𝘆 𝗞𝗲𝘆 𝗧𝗮𝗸𝗲𝗮𝘄𝗮𝘆\n\nDSA isn't just about solving coding interview questions.\n\nIt's about understanding how data is organized, how algorithms work, and how to choose efficient solutions.\n\nI'll be sharing simple explanations, practical Java examples, and visual diagrams as I explore these concepts.\nㅤ\nWhich data structure did you find most challenging when you started learning DSA?\nㅤ\n#SoftwareEngineering #DataStructures #Algorithms #Java #Programming",
+  "publishedAt": "2026-11-04T18:44:10.114Z",
+  "tags": [],
+  "image": "/blog/why-should-every-software-engineer-understand-dsa.jpg",
+  "imageAlt": "Why Should Every Software Engineer Understand DSA?",
+  "imageWidth": 1122,
+  "imageHeight": 1402
+}
